@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -166,7 +167,7 @@
             this.lblStudentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStudentID.Name = "lblStudentID";
             this.lblStudentID.Size = new System.Drawing.Size(74, 16);
-            this.lblStudentID.TabIndex = 0;
+            this.lblStudentID.TabIndex = 11;
             this.lblStudentID.Text = "Student ID";
             // 
             // lblFullName
@@ -177,7 +178,7 @@
             this.lblFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(64, 16);
-            this.lblFullName.TabIndex = 2;
+            this.lblFullName.TabIndex = 12;
             this.lblFullName.Text = "Full Name";
             // 
             // lblGPA
@@ -188,7 +189,7 @@
             this.lblGPA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGPA.Name = "lblGPA";
             this.lblGPA.Size = new System.Drawing.Size(30, 16);
-            this.lblGPA.TabIndex = 4;
+            this.lblGPA.TabIndex = 13;
             this.lblGPA.Text = "GPA";
             // 
             // txtStudentID
@@ -199,7 +200,7 @@
             this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(215, 24);
-            this.txtStudentID.TabIndex = 5;
+            this.txtStudentID.TabIndex = 1;
             this.txtStudentID.Validating += new System.ComponentModel.CancelEventHandler(this.txtStudentID_Validating);
             // 
             // txtFullName
@@ -210,7 +211,7 @@
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(215, 24);
-            this.txtFullName.TabIndex = 6;
+            this.txtFullName.TabIndex = 2;
             // 
             // txtGPA
             // 
@@ -220,7 +221,7 @@
             this.txtGPA.Margin = new System.Windows.Forms.Padding(4);
             this.txtGPA.Name = "txtGPA";
             this.txtGPA.Size = new System.Drawing.Size(215, 24);
-            this.txtGPA.TabIndex = 7;
+            this.txtGPA.TabIndex = 3;
             this.txtGPA.Validating += new System.ComponentModel.CancelEventHandler(this.txtGPA_Validating);
             // 
             // btnBinarySerialize
@@ -232,7 +233,7 @@
             this.btnBinarySerialize.Margin = new System.Windows.Forms.Padding(4);
             this.btnBinarySerialize.Name = "btnBinarySerialize";
             this.btnBinarySerialize.Size = new System.Drawing.Size(138, 32);
-            this.btnBinarySerialize.TabIndex = 1;
+            this.btnBinarySerialize.TabIndex = 5;
             this.btnBinarySerialize.Text = "Binary Serialize";
             this.btnBinarySerialize.UseVisualStyleBackColor = false;
             this.btnBinarySerialize.Click += new System.EventHandler(this.btnBinarySerialize_Click);
@@ -246,7 +247,7 @@
             this.btnBinaryDeserialize.Margin = new System.Windows.Forms.Padding(4);
             this.btnBinaryDeserialize.Name = "btnBinaryDeserialize";
             this.btnBinaryDeserialize.Size = new System.Drawing.Size(138, 32);
-            this.btnBinaryDeserialize.TabIndex = 2;
+            this.btnBinaryDeserialize.TabIndex = 8;
             this.btnBinaryDeserialize.Text = "Binary Deserialize";
             this.btnBinaryDeserialize.UseVisualStyleBackColor = false;
             this.btnBinaryDeserialize.Click += new System.EventHandler(this.btnBinaryDeserialize_Click);
@@ -260,7 +261,7 @@
             this.btnCreateStudentRecord.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateStudentRecord.Name = "btnCreateStudentRecord";
             this.btnCreateStudentRecord.Size = new System.Drawing.Size(243, 29);
-            this.btnCreateStudentRecord.TabIndex = 3;
+            this.btnCreateStudentRecord.TabIndex = 0;
             this.btnCreateStudentRecord.Text = "Create Student Record";
             this.btnCreateStudentRecord.UseVisualStyleBackColor = false;
             this.btnCreateStudentRecord.Click += new System.EventHandler(this.btnCreateStudentRecord_Click);
@@ -274,7 +275,7 @@
             this.btnXMLDeserialize.Margin = new System.Windows.Forms.Padding(4);
             this.btnXMLDeserialize.Name = "btnXMLDeserialize";
             this.btnXMLDeserialize.Size = new System.Drawing.Size(138, 32);
-            this.btnXMLDeserialize.TabIndex = 5;
+            this.btnXMLDeserialize.TabIndex = 9;
             this.btnXMLDeserialize.Text = "XML Deserialize";
             this.btnXMLDeserialize.UseVisualStyleBackColor = false;
             this.btnXMLDeserialize.Click += new System.EventHandler(this.btnXMLDeserialize_Click);
@@ -288,7 +289,7 @@
             this.btnXMLSerialize.Margin = new System.Windows.Forms.Padding(4);
             this.btnXMLSerialize.Name = "btnXMLSerialize";
             this.btnXMLSerialize.Size = new System.Drawing.Size(138, 32);
-            this.btnXMLSerialize.TabIndex = 4;
+            this.btnXMLSerialize.TabIndex = 6;
             this.btnXMLSerialize.Text = "XML Serialize";
             this.btnXMLSerialize.UseVisualStyleBackColor = false;
             this.btnXMLSerialize.Click += new System.EventHandler(this.btnXMLSerialize_Click);
@@ -302,7 +303,7 @@
             this.btnJSONDeserialize.Margin = new System.Windows.Forms.Padding(4);
             this.btnJSONDeserialize.Name = "btnJSONDeserialize";
             this.btnJSONDeserialize.Size = new System.Drawing.Size(138, 32);
-            this.btnJSONDeserialize.TabIndex = 7;
+            this.btnJSONDeserialize.TabIndex = 10;
             this.btnJSONDeserialize.Text = "JSON Deserialize";
             this.btnJSONDeserialize.UseVisualStyleBackColor = false;
             this.btnJSONDeserialize.Click += new System.EventHandler(this.btnJSONDeserialize_Click);
@@ -316,7 +317,7 @@
             this.btnJSONSerialize.Margin = new System.Windows.Forms.Padding(4);
             this.btnJSONSerialize.Name = "btnJSONSerialize";
             this.btnJSONSerialize.Size = new System.Drawing.Size(138, 32);
-            this.btnJSONSerialize.TabIndex = 6;
+            this.btnJSONSerialize.TabIndex = 7;
             this.btnJSONSerialize.Text = "JSON Serialize";
             this.btnJSONSerialize.UseVisualStyleBackColor = false;
             this.btnJSONSerialize.Click += new System.EventHandler(this.btnJSONSerialize_Click);
@@ -352,7 +353,7 @@
             this.lblMessages.Location = new System.Drawing.Point(39, 38);
             this.lblMessages.Name = "lblMessages";
             this.lblMessages.Size = new System.Drawing.Size(107, 19);
-            this.lblMessages.TabIndex = 9;
+            this.lblMessages.TabIndex = 14;
             this.lblMessages.Text = "No messages";
             this.lblMessages.Visible = false;
             // 
@@ -369,6 +370,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Student Data Serializer/Deserializer";

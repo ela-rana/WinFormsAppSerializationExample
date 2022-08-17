@@ -14,10 +14,12 @@ namespace WinFormsAppSerializationExample
         string xmlFilePath = "XMLSerializedFile.txt"; //filename where xml serialized data is saved
         string jsonFilePath = "JSONSerializedFile.txt"; //filename where json serialized data is saved
         FileStream fileStream = null;   //to create a file stream to read and write serialized values to files
+       
         public Form1()
         {
             InitializeComponent();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //we don't want the serialize or deserialize buttons to be clickable until we create a record first, so at form
@@ -29,6 +31,28 @@ namespace WinFormsAppSerializationExample
             btnJSONSerialize.Enabled = false;
             btnJSONDeserialize.Enabled = false;
         }
+
+        private void txtStudentID_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            int temp;   //a temporary variable to hold the value entered in the Student ID textbox
+            bool parsed = Int32.TryParse(txtStudentID.Text, out temp);  //bool to check if user entered value parses to an integer
+            if (parsed == false || temp < 1)  //if user entry is not an int or id is 0 or a negative number, then we need to get new entry
+            {
+                MessageBox.Show("Student ID must be a whole number ID greater than 0.\nIt cannot be blank"); //show error message
+                txtStudentID.Clear();   //blank out the textbox so value can be reentered
+            }
+        }
+        private void txtGPA_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            float temp;   //a temporary variable to hold the value entered in the GPA textbox
+            bool parsed = Single.TryParse(txtGPA.Text, out temp);  //bool to check if user entered value parses to a float
+            if (parsed == false || temp < 0 || temp > 4)  //if user entry is not a float or GPA is not between 0.0-4.0
+            {
+                MessageBox.Show("GPA value must be a whole number or decimal between 0.00 to 4.00\nIt cannot be blank"); //show error message
+                txtGPA.Clear();   //blank out the textbox so value can be reentered
+            }
+        }
+
         private void btnCreateStudentRecord_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtStudentID.Text) && !string.IsNullOrEmpty(txtFullName.Text) &&
@@ -42,7 +66,7 @@ namespace WinFormsAppSerializationExample
                 lblMessages.Visible = true;
                 lblMessages.Text = "Record created";  //to display a message that the record has been created
                 btnBinarySerialize.Enabled = true;    //now that the record has been created, we want to be able to serialize
-                                                      //it so we mark the button enabled, but we keep deserialize button disabled because we cannot deserialize
+                    //it so we mark the button enabled, but we keep deserialize button disabled because we cannot deserialize
                                                       //until we serialize it first
                 btnXMLSerialize.Enabled = true;
                 btnJSONSerialize.Enabled = true;
@@ -179,28 +203,6 @@ namespace WinFormsAppSerializationExample
             finally
             {
                 fileStream.Close();
-            }
-        }
-
-        private void txtStudentID_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            int temp;   //a temporary variable to hold the value entered in the Student ID textbox
-            bool parsed = Int32.TryParse(txtStudentID.Text, out temp);  //bool to check if user entered value parses to an integer
-            if (parsed == false || temp < 1)  //if user entry is not an int or id is 0 or a negative number, then we need to get new entry
-            {
-                MessageBox.Show("Student ID must be a whole number ID greater than 0.\nIt cannot be blank"); //show error message
-                txtStudentID.Clear();   //blank out the textbox so value can be reentered
-            }
-        }
-
-        private void txtGPA_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            float temp;   //a temporary variable to hold the value entered in the GPA textbox
-            bool parsed = Single.TryParse(txtGPA.Text, out temp);  //bool to check if user entered value parses to a float
-            if (parsed == false || temp < 0 || temp > 4)  //if user entry is not a float or GPA is not between 0.0-4.0
-            {
-                MessageBox.Show("GPA value must be a whole number or decimal between 0.00 to 4.00\nIt cannot be blank"); //show error message
-                txtGPA.Clear();   //blank out the textbox so value can be reentered
             }
         }
     }
